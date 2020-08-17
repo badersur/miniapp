@@ -1,0 +1,7 @@
+{
+	"recommendations": [
+		"samverschueren.linter-xo",
+		"esbenp.prettier-vscode",
+		"EditorConfig.EditorConfig"
+	]
+}
