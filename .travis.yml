@@ -1,7 +1,21 @@
 os: osx
-osx_image: xcode10.2
+osx_image: xcode11.3
 language: node_js
-node_js: '12'
+node_js: '14'
+addons:
+  homebrew:
+    packages:
+      - rpm
+# credit: https://github.com/develar/onshape-desktop-shell/blob/master/.travis.yml
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+/"
+cache:
+  directories:
+    - node_modules
+    - $HOME/.cache/yarn
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder
 script:
-    - npm test
-    - npm run dist
+  - yarn test
+  - travis_wait yarn dist:all
