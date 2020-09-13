@@ -1,4 +1,4 @@
-import nodeFetch from 'node-fetch';
+import got from 'got';
 
 export async function getData(): Promise<ServerData> {
 	const {node, electron} = process.versions;
@@ -6,14 +6,14 @@ export async function getData(): Promise<ServerData> {
 		`Getting data using node.js v${node} & Electron v${electron}...`
 	);
 
-	const parameters = new URLSearchParams();
-	parameters.append('a', '1');
-
-	const response = await nodeFetch('https://httpbin.org/post', {
-		method: 'POST',
-		body: parameters
-	});
-	const serverResponse = (await response.json()) as ServerResponse;
+	const serverResponse: ServerResponse = await got
+		.post('https://httpbin.org/post', {
+			method: 'POST',
+			form: {
+				a: 1
+			}
+		})
+		.json();
 
 	return {
 		serverResponse
