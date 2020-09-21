@@ -2,7 +2,7 @@
 	"name": "miniapp",
 	"productName": "Mini App",
 	"description": "A minimal electron app using webpack, TypeScript & React",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"license": "MIT",
 	"author": {
 		"name": "Bader Nasser Al-Hashmi",
