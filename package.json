@@ -2,7 +2,7 @@
 	"name": "miniapp",
 	"productName": "Mini App",
 	"description": "A minimal electron app using webpack, TypeScript & React",
-	"version": "1.4.1",
+	"version": "1.5.0",
 	"license": "MIT",
 	"author": {
 		"name": "Bader Nasser Al-Hashmi",
@@ -19,10 +19,10 @@
 		"dev": "electron-webpack dev",
 		"compile": "electron-webpack",
 		"build": "electron-builder",
-		"dist": "run-s compile build",
-		"dist:dir": "run-s compile \"build -- --dir\"",
-		"dist:all": "run-s compile \"build -- --macos --linux --windows\"",
-		"dir": "run-s dist:dir",
+		"pack": "run-s compile \"build -- --dir\"",
+		"dir": "run-s pack",
+		"dist:os": "run-s compile build",
+		"dist": "run-s compile \"build -- --macos --linux --windows\"",
 		"release": "run-s compile \"build -- --macos --linux --windows --publish always\"",
 		"lint:xo": "xo",
 		"lint:prettier": "prettier -c .",
@@ -62,9 +62,9 @@
 		"electron-webpack": "^2.8.2",
 		"electron-webpack-ts": "^4.0.1",
 		"eslint": "^7.9.0",
-		"eslint-config-xo": "^0.32.1",
+		"eslint-config-xo": "^0.33.1",
 		"eslint-config-xo-react": "^0.23.0",
-		"eslint-config-xo-typescript": "^0.32.0",
+		"eslint-config-xo-typescript": "^0.34.1",
 		"eslint-plugin-prettier": "^3.1.4",
 		"eslint-plugin-react": "^7.20.6",
 		"eslint-plugin-react-hooks": "^4.1.2",
@@ -73,7 +73,7 @@
 		"prettier": "^2.1.2",
 		"typescript": "^4.0.3",
 		"webpack": "^4.44.2",
-		"xo": "^0.33.1"
+		"xo": "^0.34.0"
 	},
 	"xo": {
 		"extends": "xo-react",
@@ -181,7 +181,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "run-s test"
+			"pre-commit": "run-s test pack"
 		}
 	}
 }

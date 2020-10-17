@@ -14,5 +14,6 @@ cache:
     - $HOME/.cache/electron-builder
 script:
   - yarn test
+  - yarn compile
   # read: https://www.electron.build/configuration/publish#githuboptions
-  - travis_wait 30 yarn release
+  - yarn build --macos --linux --windows --publish always

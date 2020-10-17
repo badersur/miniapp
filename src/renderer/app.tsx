@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Helmet} from 'react-helmet';
 
+import {ServerData} from 'common/types';
 import {productName} from '../../package.json';
 
 interface AppState {
@@ -22,8 +23,10 @@ class App extends Component<any, AppState> {
 	// Lifecycle: Called whenever our component is created
 	async componentDidMount() {
 		try {
+			// @ts-expect-error
 			const data = await window.getData();
 			this.setState({data, isLoaded: true});
+			// eslint-disable-next-line @typescript-eslint/no-implicit-any-catch
 		} catch (error) {
 			console.error(error);
 			this.setState({error, isLoaded: true});

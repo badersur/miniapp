@@ -39,14 +39,17 @@ yarn dev
 # compile source code and create webpack output
 yarn compile
 
-# `yarn compile` & create unpacked build for current operating system
-yarn dir # or yarn dist:dir
+# compile & create "unpacked" build for current operating system
+yarn dir # or yarn run pack
 
-# `yarn compile` & create production build for current operating systems
+# create "production" build for current operating system
+yarn build
+
+# compile & create a production build for "current" operating system
+yarn dist:os
+
+# compile & create a production build for "all" supported systems
 yarn dist
-
-# create a production build for all supported systems
-yarn dist:all
 ```
 
 ## Tracking repos

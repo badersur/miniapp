@@ -11,13 +11,14 @@ const argv = getArguments();
 if (argv.terminal || argv.cli) {
 	(async () => {
 		try {
+			console.log('Getting data...');
 			const data = await getData();
 			console.dir(data.serverResponse);
-		} catch (error) {
+		} catch (error: unknown) {
 			console.error(error);
 		}
 
-		process.exit();
+		process.exit(0);
 	})();
 } else {
 	createApp();
