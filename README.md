@@ -1,6 +1,9 @@
-# miniapp [![Build Status](https://travis-ci.org/badersur/miniapp.svg?branch=master)](https://travis-ci.org/github/badersur/miniapp)
+# miniapp
 
 > A minimal electron app using webpack, TypeScript & React.
+
+[![Build Status](https://travis-ci.org/badersur/miniapp.svg?branch=master)](https://travis-ci.org/github/badersur/miniapp)
+![Building on all platforms using latest node versions](https://github.com/badersur/miniapp/workflows/Building%20on%20all%20platforms%20using%20latest%20node%20versions/badge.svg)
 
 This project is a work in progress and is based on
 [electron-webpack-quick-start](https://github.com/electron-userland/electron-webpack-quick-start)

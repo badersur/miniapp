@@ -16,4 +16,4 @@ script:
   - yarn test
   - yarn compile
   # read: https://www.electron.build/configuration/publish#githuboptions
-  - yarn build --macos --linux --windows --publish always
+  - yarn build --macos --linux --windows --publish never
