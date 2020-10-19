@@ -1,6 +1,6 @@
 import yargs from 'yargs';
 
-import {description} from '../../../package.json';
+import {description} from '../../package.json';
 
 const usageText = `
 ${description}.
@@ -30,6 +30,4 @@ const {argv} = yargs.usage(usageText).options({
 	}
 });
 
-export function getArguments() {
-	return argv;
-}
+export default argv;

@@ -1,5 +1,10 @@
 {
 	"eslint.enable": false,
 	"xo.enable": true,
-	"xo.format.enable": true
+	"xo.format.enable": true,
+	"files.exclude": {
+		"dist": true,
+		"node_modules": true,
+		"yarn.lock": true
+	}
 }

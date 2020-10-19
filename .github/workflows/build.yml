@@ -14,8 +14,11 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
-        # Note: The Ubuntu 20.04 virtual environment is currently provided as a preview only. The ubuntu-latest YAML workflow label still uses the Ubuntu 18.04 virtual environment.
+        # Note: The Ubuntu 20.04 virtual environment is currently provided as
+        # a preview only. The ubuntu-latest YAML workflow label still uses the
+        # Ubuntu 18.04 virtual environment.
         # see: https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#github-hosted-runners
         os: [macos-latest, windows-latest, ubuntu-20.04]
         node: [12.x, 14.x]
