@@ -21,7 +21,7 @@ jobs:
         # Ubuntu 18.04 virtual environment.
         # see: https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#github-hosted-runners
         os: [macos-latest, windows-latest, ubuntu-20.04]
-        node: [12.x, 14.x]
+        node: [14.x, 15.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -33,10 +33,10 @@ jobs:
       - run: yarn test
       - run: yarn compile
 
-      - if: startsWith( matrix.node, '12' )
+      - if: startsWith( matrix.node, '14' )
         run: yarn build --publish never
 
-      - if: startsWith( matrix.node, '14' )
+      - if: startsWith( matrix.node, '15' )
         # https://www.electron.build/configuration/publish#githuboptions
         run: yarn build --publish always
         env:

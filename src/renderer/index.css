@@ -1,0 +1,25 @@
+:root {
+	--white: #fff;
+	--black: #000;
+	/* use light theme by default */
+	--surface-color: var(--white);
+	--painting-color: var(--black);
+}
+
+/* switch to dark theme if supported */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--surface-color: var(--black);
+		--painting-color: var(--white);
+	}
+}
+
+body {
+	--duration: 0.5s;
+	--timing: ease;
+	color: var(--painting-color);
+	background: var(--surface-color);
+	/* https://web.dev/prefers-color-scheme/#smooth-transitions-between-modes */
+	transition: color var(--duration) var(--timing),
+		background-color var(--duration) var(--timing);
+}
