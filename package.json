@@ -2,7 +2,7 @@
 	"name": "miniapp",
 	"productName": "Mini App",
 	"description": "A minimal electron app using webpack, TypeScript & React",
-	"version": "1.7.0",
+	"version": "1.8.0",
 	"license": "MIT",
 	"author": {
 		"name": "Bader Nasser Al-Hashmi",
@@ -119,7 +119,21 @@
 			"publish": "github"
 		},
 		"win": {
-			"verifyUpdateCodeSignature": false
+			"verifyUpdateCodeSignature": false,
+			"target": [
+				{
+					"target": "nsis",
+					"arch": "x64"
+				},
+				{
+					"target": "nsis-web",
+					"arch": [
+						"x64",
+						"ia32",
+						"arm64"
+					]
+				}
+			]
 		}
 	},
 	"xo": {
